@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
   pull_request:
-    types: [opened, closed]
+    types: [opened, reopened, closed]
 
 jobs:
   job-name:
@@ -9,6 +9,7 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
+      - uses: actions/checkout@v4
       - run: gh pr list --json='number,mergeCommit,title,url'
       - run: |
           curl -L \
