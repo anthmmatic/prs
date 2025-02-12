@@ -1,0 +1,11 @@
+on:
+  pull_request:
+  pull_request_target:
+
+jobs:
+  job-name:
+    concurrency:
+      group: recheck-${{ github.event.number }}
+      cancel-in-progress: true
+    uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@v3
+      
