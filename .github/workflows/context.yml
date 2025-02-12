@@ -8,3 +8,5 @@ jobs:
       group: recheck-${{ github.event.pull_request.number }}
       cancel-in-progress: true
     uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@v3
+    with:
+      workaround: true
