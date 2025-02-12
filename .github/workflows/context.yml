@@ -5,7 +5,7 @@ on:
 jobs:
   job-name:
     concurrency:
-      group: recheck-${{ env.PR_NUMBER }}
+      group: recheck-$PR_NUMBER
       cancel-in-progress: true
     uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@anthms-patch-1
       
