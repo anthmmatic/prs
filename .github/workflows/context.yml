@@ -4,8 +4,6 @@ on:
 
 jobs:
   job-name:
-    concurrency:
-      group: recheck-${{ github.event.number }}
-      cancel-in-progress: true
+    concurrency: recheck-${{ github.event.number }}
     uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@v3
       
