@@ -5,8 +5,6 @@ on:
 jobs:
   job-name:
     concurrency:
-      group: recheck-${{ github.event.pull_request.number }}
+      group: recheck-${{ github.head_ref }}-to-${{ github.base_ref }}
       cancel-in-progress: true
     uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@v3
-    with:
-      workaround: true
