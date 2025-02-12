@@ -5,9 +5,7 @@ on:
 jobs:
   job-name:
     concurrency:
-      group: recheck-${{ github.event.number }}
+      group: recheck-${{ env.PR_NUMBER }}
       cancel-in-progress: true
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo 'done'
+    uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@anthms-patch-1
       
