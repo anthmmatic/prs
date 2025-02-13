@@ -1,5 +1,6 @@
 on:
   workflow_run:
+    workflows: [Context]
 
 jobs:
   job-name:
