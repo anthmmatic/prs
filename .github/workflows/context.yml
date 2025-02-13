@@ -9,3 +9,8 @@ jobs:
       group: recheck-${{ github.head_ref }}-to-${{ github.base_ref }}
       cancel-in-progress: true
     uses: anthmmatic/public-testbox/.github/workflows/reusewf.yml@v3
+
+  event-check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{ toJSON(github.event.pull_request) }}"
