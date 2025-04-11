@@ -1,0 +1,10 @@
+on:
+  pull_request:
+    branches:
+      - 'base1'
+
+jobs:
+  example:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ github.event.pull_request.number }}
