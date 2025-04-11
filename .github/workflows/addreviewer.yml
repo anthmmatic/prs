@@ -21,4 +21,4 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "X-GitHub-Api-Version: 2022-11-28" \
             /repos/$GITHUB_REPOSITORY/pulls/$pr_number/requested_reviewers \
-             -f "reviewers[]=${{ github.actor }}"
+             -f "reviewers[]=stand-in-anth"
